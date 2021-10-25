@@ -1,0 +1,34 @@
+﻿<h2>Invoicing</h2>
+<table class="table table-dark table-striped">
+    <thead class=thead-dark>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Airplane Registration</th>
+            <th scope="col">Passenger DNI</th>
+            <th scope="col">Flight Date</th>
+            <th scope="col">Cost</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in @Model) {
+            <tr>
+                <th>@item.Id</th>
+                <th>@item.AirplaneRegistration</th>
+                <th>@item.PassengerDNI</th>
+                <th>@item.FlightDate</th>
+                <th>@item.Cost</th>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+

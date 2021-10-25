@@ -1,0 +1,38 @@
+﻿<h2>Aircraft</h2>
+<table class="table table-dark table-striped">
+    <thead class=thead-dark>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Registration</th>
+            <th scope="col">Brand</th>
+            <th scope="col">Model</th>
+            <th scope="col">Production Year</th>
+            <th scope="col">Review</th>
+            <th scope="col">Airline</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in @Model) {
+            <tr>
+                <th>@item.Id</th>
+                <th>@item.Registration</th>
+                <th>@item.Brand</th>
+                <th>@item.Model</th>
+                <th>@item.ProductionYear</th>
+                <th>@item.Review</th>
+                <th>@item.Airline</th>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
