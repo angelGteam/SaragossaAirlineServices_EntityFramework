@@ -7,18 +7,18 @@ using System.Threading.Tasks;
 
 namespace System {
     public class Envoltorio {
-        public enum Database {
+        public enum DatabaseType {
             ZaragozaAirline_Test,
             ZaragozaAirline
         }
 
-        public static string Getconnectionstring(Database dBName) {
+        public static string Getconnectionstring(DatabaseType dBName) {
             string ret;
             switch(dBName) {
-                case Database.ZaragozaAirline:
+                case DatabaseType.ZaragozaAirline:
                 ret = @"Data Source=(localdb)\AirLines;Initial Catalog=ZaragozaAirlines;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
                 break;
-                case Database.ZaragozaAirline_Test:
+                case DatabaseType.ZaragozaAirline_Test:
                 ret = @"Data Source=(localdb)\AirLines;Initial Catalog=ZaragozaAirlines_Tests;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
                 break;
                 default:

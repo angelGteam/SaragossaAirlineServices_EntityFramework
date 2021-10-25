@@ -15,7 +15,7 @@ namespace SaragossaAirline.Infra.Tests {
             listOfAirlineDTOs = new List<AirlineDTO>();
             airlineDTO = new AirlineDTO { Id = 9, AverageAnnualTurnover = 59687.00m, CreationYear = 1977, Name = "A Sollicitudin Ltd" };
             listOfAirlineDTOs.Add(airlineDTO);
-            airlineRepository = new AirlineRepository(Envoltorio.Database.ZaragozaAirline_Test);
+            airlineRepository = new AirlineRepository();
         }
 
         [Fact]

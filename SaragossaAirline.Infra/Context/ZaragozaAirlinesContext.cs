@@ -1,10 +1,12 @@
 ﻿using SaragossaAirline.Domain.Models;
 using SaragossaAirline.Infra.Context.Mappers;
 using System.Data.Entity;
+using static System.Envoltorio;
+using Database = System.Envoltorio.DatabaseType;
 
 namespace SaragossaAirline.Infra.Context {
     public class ZaragozaAirlinesContext : DbContext {
-        public ZaragozaAirlinesContext() : base(@"Data Source=(localdb)\AirLines;Initial Catalog=ZaragozaAirlines;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False") {
+        public ZaragozaAirlinesContext() : base(Getconnectionstring(DatabaseType.ZaragozaAirline)) {
         }
         public DbSet<AirlineDTO> Airlines { get; set; }
         public DbSet<AirplaneDTO> Airplanes { get; set; }

@@ -14,7 +14,7 @@ namespace SaragossaAirline.Infra.Tests {
             listOfAirplanes = new List<AirplaneDTO>();
             airplaneDTO = new AirplaneDTO { Airline = 9, Brand = "Boeing", Id = 2, Registration = "4292 DWG", Model = "747", ProductionYear = 1999, Review = 25 };
             listOfAirplanes.Add(airplaneDTO);
-            airplaneRepository = new AirplaneRepository(Envoltorio.Database.ZaragozaAirline_Test);
+            airplaneRepository = new AirplaneRepository();
         }
 
         [Fact]

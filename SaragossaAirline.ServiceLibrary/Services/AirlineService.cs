@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace SaragossaAirline.ServiceLibrary.Services {
     public class AirlineService : IAirlineService{
-        readonly IAirlineRepository airlineRepository = new AirlineRepository(System.Envoltorio.Database.ZaragozaAirline);
+        readonly IAirlineRepository airlineRepository = new AirlineRepository();
         public List<AirlineDTO> GetAirline() => airlineRepository.GetAllAirline();
     }
 }

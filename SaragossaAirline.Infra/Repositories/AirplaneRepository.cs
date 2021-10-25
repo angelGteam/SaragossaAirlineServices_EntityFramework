@@ -1,32 +1,22 @@
 ﻿using SaragossaAirline.Domain.Interfaces.Repositories;
 using SaragossaAirline.Domain.Models;
-using SaragossaAirline.Infra.Helpers;
-using SaragossaAirline.Infra.Queries;
+using SaragossaAirline.Infra.Context;
 using System.Collections.Generic;
-using System.Data.SqlClient;
-using static System.Envoltorio;
+using System.Data.Entity;
+using System.Linq;
 
 namespace SaragossaAirline.Infra.Repositories {
     public class AirplaneRepository : IAirplaneRepository {
-        private readonly string connectionString;
+        private readonly ZaragozaAirlinesContext _airlinesContext;
+        private readonly DbSet<AirplaneDTO> _airplanes;
 
-        public AirplaneRepository(Database dBName) {
-            connectionString = Getconnectionstring(dBName);
+        public AirplaneRepository() {
+            _airlinesContext = new ZaragozaAirlinesContext();
+            _airplanes = _airlinesContext.Set<AirplaneDTO>();
         }
 
         public List<AirplaneDTO> GetAllAirplane() {
-            List<AirplaneDTO> airplanes = new List<AirplaneDTO>();
-            using(var conn = new SqlConnection(connectionString)) {
-                conn.Open();
-                using(var command = new SqlCommand(QueriesConstants.SelectAllFromAirplane, conn)) {
-                    var dataReader = command.ExecuteReader();
-                    while(dataReader.Read()) {
-                        AirplaneDTO airplane = QueriesHelper.GetAirplane(dataReader);
-                        airplanes.Add(airplane);
-                    }
-                }
-            }
-            return airplanes;
+            return (List<AirplaneDTO>)_airplanes.ToList();
         }
     }
 }

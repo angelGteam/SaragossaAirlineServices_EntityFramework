@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace SaragossaAirline.ServiceLibrary.Services {
     public class InvoicingService : IInvoicingService {
-        readonly InvoicingRepository invoicingRepository = new InvoicingRepository(System.Envoltorio.Database.ZaragozaAirline);
+        readonly InvoicingRepository invoicingRepository = new InvoicingRepository(System.Envoltorio.DatabaseType.ZaragozaAirline);
         public List<InvoicingDTO> GetInvoicing() => invoicingRepository.GetAllInvoicing();
     }
 }

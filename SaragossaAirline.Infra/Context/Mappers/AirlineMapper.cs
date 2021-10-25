@@ -5,6 +5,7 @@ namespace SaragossaAirline.Infra.Context.Mappers {
     public class AirlineMapper : EntityTypeConfiguration<AirlineDTO> {
         public AirlineMapper() {
             HasKey(i => i.Id);
+            Property(m => m.AverageAnnualTurnover).HasColumnName("avganualinvoicing");
             ToTable("airline");
         }
     }
