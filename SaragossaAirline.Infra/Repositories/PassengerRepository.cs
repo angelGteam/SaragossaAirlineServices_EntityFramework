@@ -17,8 +17,8 @@ namespace SaragossaAirline.Infra.Repositories {
             _airlinesContext = new ZaragozaAirlinesContext();
             _passengers = _airlinesContext.Set<PassengerDTO>();
         }
-        public List<PassengerDTO> GetAllPassenger() {
-            return (List<PassengerDTO>)_passengers.ToList();
+        public IEnumerable<PassengerDTO> GetAllPassenger() {
+            return _passengers;
         }
     }
 }

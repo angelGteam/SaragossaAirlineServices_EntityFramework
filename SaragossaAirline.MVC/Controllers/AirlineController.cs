@@ -18,8 +18,7 @@ namespace SaragossaAirline.MVC.Controllers {
         }
 
         public ActionResult AirlineControl() {
-            List<AirlineDTO> airlinesDTO = airlineService.GetAirline();
-            List<Airline> airlines = Mapper.Map<List<Airline>>(airlinesDTO);
+            List<Airline> airlines = Mapper.Map<List<Airline>>(airlineService.GetAirline());
             return View(airlines);
         }
     }

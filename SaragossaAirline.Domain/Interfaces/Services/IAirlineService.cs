@@ -3,6 +3,6 @@ using System.Collections.Generic;
 
 namespace SaragossaAirline.Domain.Interfaces.Services {
     public interface IAirlineService {
-        List<AirlineDTO> GetAirline();
+        IEnumerable<AirlineDTO> GetAirline();
     }
 }

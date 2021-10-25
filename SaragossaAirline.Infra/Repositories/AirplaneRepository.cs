@@ -15,8 +15,8 @@ namespace SaragossaAirline.Infra.Repositories {
             _airplanes = _airlinesContext.Set<AirplaneDTO>();
         }
 
-        public List<AirplaneDTO> GetAllAirplane() {
-            return (List<AirplaneDTO>)_airplanes.ToList();
+        public IEnumerable<AirplaneDTO> GetAllAirplane() {
+            return _airplanes;
         }
     }
 }

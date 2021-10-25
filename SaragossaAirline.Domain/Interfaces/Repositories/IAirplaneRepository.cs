@@ -3,6 +3,6 @@ using System.Collections.Generic;
 
 namespace SaragossaAirline.Domain.Interfaces.Repositories {
     public interface IAirplaneRepository {
-        List<AirplaneDTO> GetAllAirplane();
+        IEnumerable<AirplaneDTO> GetAllAirplane();
     }
 }

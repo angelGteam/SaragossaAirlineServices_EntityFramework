@@ -18,8 +18,8 @@ namespace SaragossaAirline.Infra.Repositories {
             _invoicings = _airlinesContext.Set<InvoicingDTO>();
         }
 
-        public List<InvoicingDTO> GetAllInvoicing() {
-            return (List<InvoicingDTO>)_invoicings.ToList();
+        public IEnumerable<InvoicingDTO> GetAllInvoicing() {
+            return _invoicings;
         }
     }
 }

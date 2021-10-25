@@ -18,8 +18,7 @@ namespace SaragossaAirline.MVC.Controllers {
         }
 
         public ActionResult InvoicingControl() {
-            List<InvoicingDTO> invoicingsDTO = invoicingService.GetInvoicing();
-            List<Invoicing> invoicings = Mapper.Map<List<Invoicing>>(invoicingsDTO);
+            List<Invoicing> invoicings = Mapper.Map<List<Invoicing>>(invoicingService.GetInvoicing());
             return View(invoicings);
         }
     }

@@ -18,8 +18,7 @@ namespace SaragossaAirline.MVC.Controllers {
         }
 
         public ActionResult PassengerControl() {
-            List<PassengerDTO> passengersDTO = passengerService.GetPassenger();
-            List<Passenger> passengers = Mapper.Map<List<Passenger>>(passengersDTO);
+            List<Passenger> passengers = Mapper.Map<List<Passenger>>(passengerService.GetPassenger());
             return View(passengers);
         }
     }
