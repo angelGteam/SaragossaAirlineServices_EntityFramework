@@ -16,11 +16,11 @@ namespace SaragossaAirline.Infra.Tests {
             listOfPassengers = new List<PassengerDTO>();
             passengerDTO = new PassengerDTO { Id = 1, BirthDate = new DateTime(1994, 07, 03, 00, 00, 00), DNI = "55173155L", FullName = "LORENZO GOMEZ MORENO", IsRetired = false };
             listOfPassengers.Add(passengerDTO);
-            passengerRepository = new PassengerRepository(Envoltorio.DatabaseType.ZaragozaAirline_Test);
+            passengerRepository = new PassengerRepository();
         }
         [Fact]
         public void Get_AllAirline_Returns_NotNull_List_Of_AirLineDTOs() {
-            List<PassengerDTO> listOfPassengersFromBBDD = passengerRepository.GetAllPassenger();
+            IEnumerable<PassengerDTO> listOfPassengersFromBBDD = passengerRepository.GetAllPassenger();
             listOfPassengers.Should().BeEquivalentTo(listOfPassengersFromBBDD);
         }
     }

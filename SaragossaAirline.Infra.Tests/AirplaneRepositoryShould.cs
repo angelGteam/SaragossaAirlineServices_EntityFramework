@@ -19,7 +19,7 @@ namespace SaragossaAirline.Infra.Tests {
 
         [Fact]
         public void Get_AllAirline_Returns_NotNull_List_Of_AirLineDTOs() {
-            List<AirplaneDTO> listOfAirlineFromBBDD = airplaneRepository.GetAllAirplane();
+            IEnumerable<AirplaneDTO> listOfAirlineFromBBDD = airplaneRepository.GetAllAirplane();
             listOfAirplanes.Should().BeEquivalentTo(listOfAirlineFromBBDD);
         }
     }

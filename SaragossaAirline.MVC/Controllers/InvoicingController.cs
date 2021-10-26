@@ -11,14 +11,14 @@ using SaragossaAirline.Domain.Interfaces.Services;
 
 namespace SaragossaAirline.MVC.Controllers {
     public class InvoicingController : Controller {
-        IInvoicingService invoicingService;
+        IInvoicingService _invoicingService;
         
-        public InvoicingController() {
-            invoicingService = new InvoicingService();
+        public InvoicingController(IInvoicingService invoicingService) {
+            _invoicingService = invoicingService;
         }
 
         public ActionResult InvoicingControl() {
-            List<Invoicing> invoicings = Mapper.Map<List<Invoicing>>(invoicingService.GetInvoicing());
+            List<Invoicing> invoicings = Mapper.Map<List<Invoicing>>(_invoicingService.GetInvoicing());
             return View(invoicings);
         }
     }

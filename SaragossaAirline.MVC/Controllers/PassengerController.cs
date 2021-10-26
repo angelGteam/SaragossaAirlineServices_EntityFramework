@@ -11,14 +11,14 @@ using System.Web.Mvc;
 
 namespace SaragossaAirline.MVC.Controllers {
     public class PassengerController : Controller {
-        IPassengerService passengerService;
+        IPassengerService _passengerService;
 
-        public PassengerController() {
-            passengerService = new PassengerService();
+        public PassengerController(IPassengerService passengerService) {
+            _passengerService = passengerService;
         }
 
         public ActionResult PassengerControl() {
-            List<Passenger> passengers = Mapper.Map<List<Passenger>>(passengerService.GetPassenger());
+            List<Passenger> passengers = Mapper.Map<List<Passenger>>(_passengerService.GetPassenger());
             return View(passengers);
         }
     }

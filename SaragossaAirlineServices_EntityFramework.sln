@@ -23,7 +23,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaragossaAirline.ServiceLib
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SaragossaAirline.Infra.Tests", "SaragossaAirline.Infra.Tests\SaragossaAirline.Infra.Tests.csproj", "{9F6ECFDB-823D-445B-9ECA-14907C8F71DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaragossaAirlineServices.ServiceLibrary.Tests", "SaragossaAirlineServices.ServiceLibrary.Tests\SaragossaAirlineServices.ServiceLibrary.Tests.csproj", "{8C1DC87D-11B2-405F-9C2A-6466DAE89B30}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SaragossaAirlineServices.ServiceLibrary.Tests", "SaragossaAirlineServices.ServiceLibrary.Tests\SaragossaAirlineServices.ServiceLibrary.Tests.csproj", "{8C1DC87D-11B2-405F-9C2A-6466DAE89B30}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -68,6 +68,7 @@ Global
 		{8C1DC87D-11B2-405F-9C2A-6466DAE89B30} = {F91FFD05-35D7-4897-9FE6-1F80A6B29A05}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.0\lib\NET35
 		SolutionGuid = {A429BA9E-FE44-4B82-8509-F0B7688ACFD8}
 	EndGlobalSection
 EndGlobal
