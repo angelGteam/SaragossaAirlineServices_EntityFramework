@@ -12,13 +12,20 @@ using System.Web.Mvc;
 namespace SaragossaAirline.MVC.Controllers {
     public class AirlineController : Controller {
         IAirlineService _airlineService;
-        
+
         public AirlineController(IAirlineService airlineService) {
             _airlineService = airlineService;
         }
 
         public ActionResult AirlineControl() {
-            List<Airline> airlines = Mapper.Map<List<Airline>>(_airlineService.GetAirline());
+            Log.Info("Called AirlineControl");
+            List<Airline> airlines = new List<Airline>();
+            try {
+                airlines = Mapper.Map<List<Airline>>(_airlineService.GetAirline());
+                throw new Exception();
+            } catch(Exception e) {
+                Log.Error("An Error ocurred getting the Airlines", e);
+            }
             return View(airlines);
         }
     }
